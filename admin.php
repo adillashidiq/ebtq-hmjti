@@ -3,6 +3,14 @@ include_once 'header.php';
 if (!isset($_SESSION['admin'])) {
   header("Location: index.php");
 }
+
+$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
+$query = "select*from admin";
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
+  echo mysqli_error($conn);
+}
 ?>
 
 <!-- Main content -->
@@ -120,25 +128,32 @@ if (!isset($_SESSION['admin'])) {
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" class="sort" data-sort="no">No</th>
-                  <th scope="col" class="sort" data-sort="nama surah">NIM</th>
-                  <th scope="col" class="sort" data-sort="tugas">Username</th>
-                  <th scope="col" class="sort" data-sort="upload">Password</th>
+                  <th scope="col" class="sort">No</th>
+                  <th scope="col" class="sort">NIM</th>
+                  <th scope="col" class="sort">Password</th>
+                  <th scope="col" class="sort">Aksi</th>
                 </tr>
               </thead>
+              <tbody class="list">
+                <?php $angka = 1; ?>
+                <?php foreach ($result as $data) : ?>
+                  <tr>
+                    <th scope="row"><?= $angka ?></th>
+                    <td><?= $data['username'] ?></td>
+                    <td><?= $data['password'] ?></td>
+                    <td>
+                      <a href="act.php?del&id=<?= $data['id'] ?>" class="badge bg-danger text-light">Delete</a>
+                    </td>
+                  </tr>
+                  <?php $angka++ ?>
+                <?php endforeach ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-              <!-- Argon Scripts -->
-              <!-- Core -->
-              <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-              <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-              <script src="assets/vendor/js-cookie/js.cookie.js"></script>
-              <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-              <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-              <!-- Optional JS -->
-              <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
-              <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
-              <!-- Argon JS -->
-              <script src="assets/js/argon.js?v=1.2.0"></script>
-              </body>
-
-              </html>
+<?php include_once 'footer.php' ?>
