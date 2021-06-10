@@ -1,5 +1,8 @@
 <?php
 include_once 'header.php';
+if (!isset($_SESSION['admin'])) {
+    header("Location: index.php");
+}
 ?>
 
 <div class="container">
