@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['admin'])) {
+  header("Location: index.php");
+}
+
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
 $query = "select*from tugas";
 $result = mysqli_query($conn, $query);
