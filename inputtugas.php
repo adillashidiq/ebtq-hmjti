@@ -220,7 +220,13 @@ if (!$result) {
                     <?php $angka++ ?>
                   <?php endforeach ?>
                 </tbody>
-
+                <div class="row mt-3">
+                  <?php
+                  if (isset($_GET['msg'])) {
+                    echo $_GET['msg'];
+                  }
+                  ?>
+                </div>
             </div>
 
             <!-- Optional JavaScript; choose one of the two! -->
