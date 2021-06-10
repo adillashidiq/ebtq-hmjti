@@ -22,11 +22,10 @@ if (isset($_POST['tblogin'])) {
 
 if (isset($_POST['submit-admin'])) {
   //echo "tombol submit ditekan";
-  $NIM = $_POST['NIM'];
-  $username = $_POST['username'];
+  $username = $_POST['NIM'];
   $password = $_POST['password'];
 
-  $query = "insert into user (NIM, username, password) values ('$NIM', '$username', '$password')";
+  $query = "insert into admin (username, password) values ('$username', '$password')";
 
   if (mysqli_query($conn, $query) == 'true') {
     $message = "<p class= 'alert alert-success'> Berhasil menambahkan admin </p>";
@@ -36,11 +35,12 @@ if (isset($_POST['submit-admin'])) {
   }
 } else if (isset($_GET['del'])) {
   $id = $_GET['id'];
-  $query = "delete from user where id=$id";
+  $query = "delete from admin where id=$id";
   if (mysqli_query($conn, $query) == 'true') {
-    $message = "Data berhasil di delete";
+    $message = "<p class= 'alert alert-success'> Data berhasil didelete </p>";
+    header("Location: admin.php?msg=$message");
   } else {
-    $message = "Data gagal di delete" . mysqli_error($conn);
+    $message = "<p class= 'alert alert-success'> Data gagal didelete </p>" . mysqli_error($conn);
   }
 }
 
