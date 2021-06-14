@@ -53,10 +53,7 @@ if (!$result) {
               <tr>
                 <th scope="col" class="sort" data-sort="no">No</th>
                 <th scope="col" class="sort" data-sort="nama surah">Nama Surah</th>
-                <th scope="col" class="sort" data-sort="tugas">Tugas </th>
-                <th scope="col" class="sort" data-sort="upload">Ambil Tugas</th>
-                <th scope="col" class="sort" data-sort="validasi">Validasi</th>
-                <th scope="col" class="sort" data-sort="completion">Kelengkapan</th>
+                <th scope="col" class="sort" data-sort="tugas">Tugas</th>
                 <th scope="col" class="sort" data-sort="aksi">Aksi</th>
               </tr>
             </thead>
@@ -64,12 +61,11 @@ if (!$result) {
               <?php $angka = 1; ?>
               <?php foreach ($result as $data) : ?>
                 <tr>
-                  <th scope="row"><?= $angka ?></th>
+                  <th scope="row"><?= $angka++ ?></th>
                   <td><?= $data['nama_surah'] ?></td>
                   <td><?= $data['tugas'] ?></td>
-                  <td><input class="btn btn-sm btn-neutral" type="button" value="Ambil Tugas"></td>
+                  <td><a href="detail.php?id=<?= $data['id'] ?>"><input type="button" class="btn btn-sm btn-neutral" value="Detail Tugas"></a></td>
                 </tr>
-                <?php $angka++ ?>
               <?php endforeach ?>
             </tbody>
             <div class="row mt-3">
