@@ -1,7 +1,7 @@
 <?php
 session_start();
 $title = 'Admin | E-BTQ HMJ TI';
-include_once 'header.php';
+include_once 'sidenav.php';
 if (!isset($_SESSION['admin'])) {
   header("Location: index.php");
 }
