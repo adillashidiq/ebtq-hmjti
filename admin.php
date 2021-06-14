@@ -1,4 +1,6 @@
 <?php
+session_start();
+$title = 'Admin | E-BTQ HMJ TI';
 include_once 'header.php';
 if (!isset($_SESSION['admin'])) {
   header("Location: index.php");
@@ -142,7 +144,7 @@ if (!$result) {
                     <td><?= $data['username'] ?></td>
                     <td><?= $data['password'] ?></td>
                     <td>
-                      <a href="act.php?del&id=<?= $data['id'] ?>" class="badge bg-danger text-light">Delete</a>
+                      <a href="act.php?del&id=<?= $data['id'] ?>" class="btn btn-outline-danger btn-sm">Delete</a>
                     </td>
                   </tr>
                   <?php $angka++ ?>
