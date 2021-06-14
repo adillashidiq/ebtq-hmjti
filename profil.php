@@ -3,7 +3,7 @@ session_start();
 $title = 'Profil | E-BTQ HMJ TI';
 include_once 'sidenav.php';
 if (!isset($_SESSION['admin'])) {
-  header("Location: index.php");
+  header("Location: login.php");
 }
 ?>
 

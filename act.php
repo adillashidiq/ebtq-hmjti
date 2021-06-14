@@ -14,7 +14,7 @@ if (isset($_POST['tblogin'])) {
     header("Location: dashboard.php");
   } else {
     $msg = "<p class= 'alert alert-danger'> Username atau Password Anda salah</p>";
-    header("Location: index.php?msg=$msg");
+    header("Location: login.php?msg=$msg");
   }
 } else {
   echo "Tombol Submit Kosong";
@@ -50,7 +50,7 @@ if (isset($_POST['changepwd'])) {
   $query = "update user set password='$password'";
   if (mysqli_query($conn, $query) == 'true') {
     $message = "<p class= 'alert alert-success'> Password berhasil diganti !</p>";
-    header("Location: index.php?msg=$message");
+    header("Location: login.php?msg=$message");
   }
 }
 
