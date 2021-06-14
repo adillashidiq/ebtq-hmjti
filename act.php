@@ -68,4 +68,13 @@ if (isset($_POST['submit-tugas'])) {
   } else {
     echo "Terjadi kesalahan saat menambahkan tugas!";
   }
+} else if (isset($_GET['del'])) {
+  $id = $_GET['id'];
+  $query = "delete from tugas where id=$id";
+  if (mysqli_query($conn, $query) == 'true') {
+    $message = "<p class= 'alert alert-success'> Data berhasil didelete </p>";
+    header("Location: inputtugas.php?msg=$message");
+  } else {
+    $message = "<p class= 'alert alert-success'> Data gagal didelete </p>" . mysqli_error($conn);
+  }
 }
