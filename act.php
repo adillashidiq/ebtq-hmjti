@@ -11,7 +11,7 @@ $isLogin = mysqli_num_rows($login);
 if (isset($_POST['tblogin'])) {
   if ($isLogin == 1) {
     $_SESSION['admin'] = $username;
-    header("Location: dashboard.php");
+    header("Location: index.php");
   } else {
     $msg = "<p class= 'alert alert-danger'> Username atau Password Anda salah</p>";
     header("Location: login.php?msg=$msg");
