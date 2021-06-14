@@ -65,13 +65,13 @@ if (!$result) {
                   <td><?= $data['username'] ?></td>
                   <td><?= $data['password'] ?></td>
                   <td>
-                    <a href="act.php?del&id=<?= $data['id'] ?>" class="btn btn-outline-danger btn-sm">Delete</a>
+                    <a href="act.php?del&id=<?= $data['id'] ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut?')">Delete</a>
                   </td>
                 </tr>
                 <?php $angka++ ?>
               <?php endforeach ?>
             </tbody>
-            <div class="row mt-3">
+            <div class=" row mt-3">
               <?php
               if (isset($_GET['msg'])) {
                 echo $_GET['msg'];
