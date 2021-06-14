@@ -1,12 +1,10 @@
 <?php
 session_start();
-$title = 'Home | E-BTQ HMJ TI';
-
-include_once 'sidenav.php';
-
 if (!isset($_SESSION['admin'])) {
   header("Location: login.php");
 }
+$title = 'Home | E-BTQ HMJ TI';
+include_once 'sidenav.php';
 ?>
 
 <!-- Header -->

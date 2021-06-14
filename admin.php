@@ -1,10 +1,10 @@
 <?php
 session_start();
-$title = 'Admin | E-BTQ HMJ TI';
-include_once 'sidenav.php';
 if (!isset($_SESSION['admin'])) {
   header("Location: login.php");
 }
+$title = 'Admin | E-BTQ HMJ TI';
+include_once 'sidenav.php';
 
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
 $query = "select*from admin";
