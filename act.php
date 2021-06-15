@@ -1,20 +1,33 @@
 <?php
 session_start();
+$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-$query = "SELECT * from admin where username ='$username' && password='$password'";
+$query = "SELECT * from users where username ='$username' && password='$password'";
 $login = mysqli_query($conn, $query);
 $isLogin = mysqli_num_rows($login);
 
-if (isset($_POST['tblogin'])) {
-  if ($isLogin == 1) {
-    $_SESSION['admin'] = $username;
-    header("Location: index.php");
-  } else {
-    $msg = "<p class= 'alert alert-danger'> Username atau Password Anda salah</p>";
-    header("Location: login.php?msg=$msg");
+if ($isLogin > 0) {
+  $data = mysqli_fetch_assoc($login);
+
+  if ($data['level'] == "admin") {
+
+    // buat session login dan username
+    $_SESSION['username'] = $username;
+    $_SESSION['level'] = "admin";
+    // alihkan ke halaman dashboard admin
+    header("location:index.php");
+
+
+    // cek jika user login sebagai warga
+  } else if ($data['level'] == "mahasiswa") {
+    // buat session login dan username
+    $_SESSION['username'] = $username;
+    $_SESSION['level'] = "mahasiswa";
+    // alihkan ke halaman dashboard warga
+    header("location:admin.php");
   }
 } else {
   echo "Tombol Submit Kosong";
@@ -25,7 +38,7 @@ if (isset($_POST['submit-admin'])) {
   $username = $_POST['NIM'];
   $password = $_POST['password'];
 
-  $query = "insert into admin (username, password) values ('$username', '$password')";
+  $query = "insert into users (username, password) values ('$username', '$password')";
 
   if (mysqli_query($conn, $query) == 'true') {
     $message = "<p class= 'alert alert-success'> Berhasil menambahkan admin </p>";
@@ -35,7 +48,7 @@ if (isset($_POST['submit-admin'])) {
   }
 } else if (isset($_GET['del'])) {
   $id = $_GET['id'];
-  $query = "delete from admin where id=$id";
+  $query = "delete from users where id=$id";
   if (mysqli_query($conn, $query) == 'true') {
     $message = "<p class= 'alert alert-success'> Data berhasil didelete </p>";
     header("Location: admin.php?msg=$message");

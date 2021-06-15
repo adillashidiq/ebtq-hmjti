@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin'])) {
+if ($_SESSION['level'] == "") {
   header("Location: login.php");
 }
 $title = 'Tambah Tugas | E-BTQ HMJ TI';
