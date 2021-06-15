@@ -112,11 +112,6 @@
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"></i>
-              </a>
-            </li>
           </ul>
           <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
             <li class="nav-item dropdown">
@@ -126,7 +121,7 @@
                     <img alt="Image placeholder" src="assets/img/theme/Tasya.jpg">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Admin2</span>
+                    <span class="mb-0 text-sm  font-weight-bold"><?= $_SESSION['level']; ?></span>
                   </div>
                 </div>
               </a>
