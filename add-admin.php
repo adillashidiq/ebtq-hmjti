@@ -49,15 +49,21 @@ include_once 'sidenav.php';
 						<div class="card-body">
 							<form action="act.php" method="post">
 								<div class="row mb-3">
-									<label for="tugas" class="col-sm-2 col-form-label">NIM</label>
+									<label for="username" class="col-sm-2 col-form-label">Username</label>
 									<div class="col-sm-10">
-										<input type="text" class="form-control" id="NIM" name="NIM" required="required">
+										<input type="text" class="form-control" id="username" name="username" required="required">
 									</div>
 								</div>
 								<div class="row mb-3">
-									<label for="tugas" class="col-sm-2 col-form-label">Password</label>
+									<label for="nim" class="col-sm-2 col-form-label">NIM</label>
 									<div class="col-sm-10">
-										<input type="text" class="form-control" id="password" name="password" required="required">
+										<input type="text" class="form-control" id="nim" name="nim" required="required">
+									</div>
+								</div>
+								<div class="row mb-3">
+									<label for="password" class="col-sm-2 col-form-label">Password</label>
+									<div class="col-sm-10">
+										<input type="password" class="form-control" id="password" name="password" required="required">
 									</div>
 								</div>
 								<button type="submit" class="btn btn-primary" name="submit-admin">Tambah Admin</button>
