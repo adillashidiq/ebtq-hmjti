@@ -65,7 +65,7 @@ if (!$result) {
                   <td><?= $data['username'] ?></td>
                   <td><?= $data['nim'] ?></td>
                   <td>
-                    <a href="act.php?del&id=<?= $data['id'] ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut?')">Delete</a>
+                    <a href="act-admin.php?del&id=<?= $data['id'] ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut?')">Delete</a>
                   </td>
                 </tr>
                 <?php $angka++ ?>
