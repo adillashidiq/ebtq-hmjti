@@ -24,16 +24,12 @@ session_start();
                 <h3 class="signin-text mb-4 text-center">E-BTQ HMJ TI</h3>
                 <form action="act.php" method="POST">
                     <div class="form-group">
-                        <label for="text">Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Masukkan Username">
+                        <label for="text">NIM</label>
+                        <input type="text" name="nim" class="form-control" placeholder="Masukkan NIM">
                     </div>
                     <div class="form-group mt-3">
                         <label for="password">Password</label>
                         <input type="password" name="password" class="form-control" placeholder="Masukkan Password">
-                    </div>
-                    <div class="form-group form-check mt-3">
-                        <input type="checkbox" name="checkbox" class="form-check-input" id="checkbox">
-                        <label class="form-check-label" for="checkbox">Remember Username</label>
                     </div>
                     <button class="btn btn-class mt-3" name="tblogin">Login</button>
                 </form>

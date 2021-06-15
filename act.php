@@ -2,10 +2,10 @@
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
 
-$username = $_POST['username'];
+$nim = $_POST['nim'];
 $password = $_POST['password'];
 
-$query = "SELECT * from users where username ='$username' && password='$password'";
+$query = "SELECT * from users where nim ='$nim' && password='$password'";
 $login = mysqli_query($conn, $query);
 $isLogin = mysqli_num_rows($login);
 
@@ -14,19 +14,12 @@ if ($isLogin > 0) {
 
   if ($data['level'] == "admin") {
 
-    // buat session login dan username
-    $_SESSION['username'] = $username;
+    $_SESSION['nim'] = $nim;
     $_SESSION['level'] = "admin";
-    // alihkan ke halaman dashboard admin
     header("location:index.php");
-
-
-    // cek jika user login sebagai warga
   } else if ($data['level'] == "mahasiswa") {
-    // buat session login dan username
-    $_SESSION['username'] = $username;
+    $_SESSION['nim'] = $nim;
     $_SESSION['level'] = "mahasiswa";
-    // alihkan ke halaman dashboard warga
     header("location:admin.php");
   }
 } else {
@@ -35,10 +28,10 @@ if ($isLogin > 0) {
 
 if (isset($_POST['submit-admin'])) {
   //echo "tombol submit ditekan";
-  $username = $_POST['NIM'];
+  $nim = $_POST['NIM'];
   $password = $_POST['password'];
 
-  $query = "insert into users (username, password) values ('$username', '$password')";
+  $query = "insert into users (nim, password) values ('$nim', '$password')";
 
   if (mysqli_query($conn, $query) == 'true') {
     $message = "<p class= 'alert alert-success'> Berhasil menambahkan admin </p>";

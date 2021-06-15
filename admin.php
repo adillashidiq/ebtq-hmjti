@@ -52,8 +52,8 @@ if (!$result) {
             <thead class="thead-light">
               <tr>
                 <th scope="col" class="sort">No</th>
+                <th scope="col" class="sort">Username</th>
                 <th scope="col" class="sort">NIM</th>
-                <th scope="col" class="sort">Password</th>
                 <th scope="col" class="sort">Aksi</th>
               </tr>
             </thead>
@@ -63,7 +63,7 @@ if (!$result) {
                 <tr>
                   <th scope="row"><?= $angka ?></th>
                   <td><?= $data['username'] ?></td>
-                  <td><?= $data['password'] ?></td>
+                  <td><?= $data['nim'] ?></td>
                   <td>
                     <a href="act.php?del&id=<?= $data['id'] ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut?')">Delete</a>
                   </td>
