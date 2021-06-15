@@ -23,31 +23,8 @@ if ($isLogin > 0) {
     header("location:admin.php");
   }
 } else {
-  echo "Tombol Submit Kosong";
-}
-
-if (isset($_POST['submit-admin'])) {
-  //echo "tombol submit ditekan";
-  $nim = $_POST['NIM'];
-  $password = $_POST['password'];
-
-  $query = "insert into users (nim, password) values ('$nim', '$password')";
-
-  if (mysqli_query($conn, $query) == 'true') {
-    $message = "<p class= 'alert alert-success'> Berhasil menambahkan admin </p>";
-    header("Location: admin.php?msg=$message");
-  } else {
-    echo "Terjadi kesalahan saat menambahkan admin!";
-  }
-} else if (isset($_GET['del'])) {
-  $id = $_GET['id'];
-  $query = "delete from users where id=$id";
-  if (mysqli_query($conn, $query) == 'true') {
-    $message = "<p class= 'alert alert-success'> Data berhasil didelete </p>";
-    header("Location: admin.php?msg=$message");
-  } else {
-    $message = "<p class= 'alert alert-success'> Data gagal didelete </p>" . mysqli_error($conn);
-  }
+  $message = "<p class= 'alert alert-danger'> Login gagal : (NIM / Password) salah </p";
+  header("location:login.php?msg=$message");
 }
 
 if (isset($_POST['changepwd'])) {
@@ -59,7 +36,6 @@ if (isset($_POST['changepwd'])) {
     header("Location: login.php?msg=$message");
   }
 }
-
 
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
 
