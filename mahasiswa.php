@@ -58,40 +58,6 @@ if (isset($_GET['pesan_hapus'])) {
 
 <!-- Page content -->
 <div class="container-fluid mt--6">
-  <div class="row mb-2">
-    <div>
-      <?php if (isset($gagal_hapus)) : ?>
-        <div class="btn btn-danger text-white mt-4 " role="alert">
-          Data mahasiswa gagal dihapus
-        </div>
-      <?php endif ?>
-      <?php if (isset($berhasil_hapus)) : ?>
-        <div class="btn btn-success text-white mt-4 " role="alert">
-          Data mahasiswa berhasil dihapus
-        </div>
-      <?php endif ?>
-      <?php if (isset($gagal_tambah)) : ?>
-        <div class="btn btn-danger text-white mt-4 " role="alert">
-          Data mahasiswa gagal ditambah
-        </div>
-      <?php endif ?>
-      <?php if (isset($berhasil_tambah)) : ?>
-        <div class="btn btn-success text-white mt-4 " role="alert">
-          Data mahasiswa berhasil ditambah
-        </div>
-      <?php endif ?>
-      <?php if (isset($gagal_edit)) : ?>
-        <div class="btn btn-danger text-white mt-4 " role="alert">
-          Data mahasiswa gagal diedit
-        </div>
-      <?php endif ?>
-      <?php if (isset($berhasil_edit)) : ?>
-        <div class="btn btn-success text-white mt-4 " role="alert">
-          Data mahasiswa berhasil diedit
-        </div>
-      <?php endif ?>
-    </div>
-  </div>
   <div class="row">
     <div class="col">
       <div class="card">
@@ -99,6 +65,44 @@ if (isset($_GET['pesan_hapus'])) {
         <div class="card-header border-0">
           <h3 class="mb-0">DATA MAHASISWA</h3>
         </div>
+
+        <!-- Pesan -->
+        <div class="row mb-2">
+          <div>
+            <?php if (isset($gagal_hapus)) : ?>
+              <div class="alert alert-danger text-white mt-4" role="alert">
+                Data mahasiswa gagal dihapus
+              </div>
+            <?php endif ?>
+            <?php if (isset($berhasil_hapus)) : ?>
+              <div class="alert alert-success text-white mt-4" role="alert">
+                Data mahasiswa berhasil dihapus
+              </div>
+            <?php endif ?>
+            <?php if (isset($gagal_tambah)) : ?>
+              <div class="alert alert-danger text-white mt-4" role="alert">
+                Data mahasiswa gagal ditambah
+              </div>
+            <?php endif ?>
+            <?php if (isset($berhasil_tambah)) : ?>
+              <div class="alert alert-success text-white mt-4" role="alert">
+                Data mahasiswa berhasil ditambah
+              </div>
+            <?php endif ?>
+            <?php if (isset($gagal_edit)) : ?>
+              <div class="alert alert-danger text-white mt-4" role="alert">
+                Data mahasiswa gagal diedit
+              </div>
+            <?php endif ?>
+            <?php if (isset($berhasil_edit)) : ?>
+              <div class="alert alert-success text-white mt-4" role="alert">
+                Data mahasiswa berhasil diedit
+              </div>
+            <?php endif ?>
+          </div>
+        </div>
+        <!-- End Pesan -->
+
         <!-- Light table -->
         <div class="table-responsive">
           <table class="table align-items-center table-flush">

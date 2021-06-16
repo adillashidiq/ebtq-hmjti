@@ -13,6 +13,24 @@ $result = mysqli_query($conn, $query);
 if (!$result) {
   echo mysqli_error($conn);
 }
+
+// Pesan Tambah
+if (isset($_GET['pesan_tambah'])) {
+  if ($_GET['pesan_tambah'] == "berhasil") {
+    $berhasil_tambah = true;
+  } else if ($_GET['pesan_tambah'] == "gagal") {
+    $gagal_tambah = true;
+  }
+}
+
+// Pesan Hapus
+if (isset($_GET['pesan_hapus'])) {
+  if ($_GET['pesan_hapus'] == "berhasil") {
+    $berhasil_hapus = true;
+  } else if ($_GET['pesan_hapus'] == "gagal") {
+    $gagal_hapus = true;
+  }
+}
 ?>
 
 <!-- Header -->
@@ -46,6 +64,44 @@ if (!$result) {
         <div class="card-header border-0">
           <h3 class="mb-0">DATA ADMIN</h3>
         </div>
+
+        <!-- Pesan -->
+        <div class="row mb-2">
+          <div>
+            <?php if (isset($gagal_hapus)) : ?>
+              <div class="alert alert-danger text-white mt-4" role="alert">
+                Data admin gagal dihapus
+              </div>
+            <?php endif ?>
+            <?php if (isset($berhasil_hapus)) : ?>
+              <div class="alert alert-success text-white mt-4" role="alert">
+                Data admin berhasil dihapus
+              </div>
+            <?php endif ?>
+            <?php if (isset($gagal_tambah)) : ?>
+              <div class="alert alert-danger text-white mt-4" role="alert">
+                Data admin gagal ditambah
+              </div>
+            <?php endif ?>
+            <?php if (isset($berhasil_tambah)) : ?>
+              <div class="alert alert-success text-white mt-4" role="alert">
+                Data admin berhasil ditambah
+              </div>
+            <?php endif ?>
+            <?php if (isset($gagal_edit)) : ?>
+              <div class="alert alert-danger text-white mt-4" role="alert">
+                Data admin gagal diedit
+              </div>
+            <?php endif ?>
+            <?php if (isset($berhasil_edit)) : ?>
+              <div class="alert alert-success text-white mt-4" role="alert">
+                Data admin berhasil diedit
+              </div>
+            <?php endif ?>
+          </div>
+        </div>
+        <!-- End Pesan -->
+
         <!-- Light table -->
         <div class="table-responsive">
           <table class="table align-items-center table-flush">

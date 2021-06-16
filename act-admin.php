@@ -12,18 +12,16 @@ if (isset($_POST['submit-admin'])) {
     $query = "insert into users (username, nim, password, level) values ('$username', '$nim', '$password', '$level')";
 
     if (mysqli_query($conn, $query) == 'true') {
-        $message = "<p class='alert alert-success'> Berhasil menambahkan admin </p>";
-        header("Location: admin.php?msg=$message");
+        header("Location: admin.php?pesan_tambah=berhasil");
     } else {
-        echo "Terjadi kesalahan saat menambahkan admin!";
+        header("Location: admin.php?pesan_tambah=gagal");
     }
 } else if (isset($_GET['del'])) {
     $id = $_GET['id'];
     $query = "delete from users where id=$id";
     if (mysqli_query($conn, $query) == 'true') {
-        $message = "<p class='alert alert-success'> Data berhasil didelete </p>";
-        header("Location: admin.php?msg=$message");
+        header("Location: admin.php?pesan_hapus=berhasil");
     } else {
-        $message = "<p class='alert alert-success'> Data gagal didelete </p>" . mysqli_error($conn);
+        header("Location: admin.php?pesan_hapus=gagal");
     }
 }
