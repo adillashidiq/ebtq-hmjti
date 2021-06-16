@@ -3,6 +3,16 @@ session_start();
 if ($_SESSION['level'] == "") {
   header("Location: login.php");
 }
+$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
+$query = "select*from users  where level = 'mahasiswa'";
+$result = mysqli_query($conn, $query);
+$hitung_mahasiswa = mysqli_num_rows($result);
+
+$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
+$query = "select*from tugas";
+$result = mysqli_query($conn, $query);
+$hitung_tugas = mysqli_num_rows($result);
+
 $title = 'Home | E-BTQ HMJ TI';
 include_once 'sidenav.php';
 ?>
@@ -27,124 +37,67 @@ include_once 'sidenav.php';
           <a href="#" class="btn btn-sm btn-neutral">Filters</a>
         </div>
       </div>
-      <!-- Card stats -->
-      <div class="row">
-        <div class="col-xl-3 col-md-6">
-          <div class="card card-stats">
-            <!-- Card body -->
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Total traffic</h5>
-                  <span class="h2 font-weight-bold mb-0">350,897</span>
-                </div>
-                <div class="col-auto">
-                  <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                    <i class="ni ni-active-40"></i>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-3 mb-0 text-sm">
-                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                <span class="text-nowrap">Since last month</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="card card-stats">
-            <!-- Card body -->
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                  <span class="h2 font-weight-bold mb-0">2,356</span>
-                </div>
-                <div class="col-auto">
-                  <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                    <i class="ni ni-chart-pie-35"></i>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-3 mb-0 text-sm">
-                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                <span class="text-nowrap">Since last month</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="card card-stats">
-            <!-- Card body -->
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                  <span class="h2 font-weight-bold mb-0">924</span>
-                </div>
-                <div class="col-auto">
-                  <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                    <i class="ni ni-money-coins"></i>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-3 mb-0 text-sm">
-                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                <span class="text-nowrap">Since last month</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="card card-stats">
-            <!-- Card body -->
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                  <span class="h2 font-weight-bold mb-0">49,65%</span>
-                </div>
-                <div class="col-auto">
-                  <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                    <i class="ni ni-chart-bar-32"></i>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-3 mb-0 text-sm">
-                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                <span class="text-nowrap">Since last month</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
-<!-- Footer -->
-<footer class="footer pt-0">
-  <div class="row align-items-center justify-content-lg-between">
-    <div class="col-lg-6">
-      <div class="copyright text-center  text-lg-left  text-muted">
-        &copy; 2020 <a href="#" class="font-weight-bold ml-1">Fadillah Ahmad Ashshidiq & Tasya Nabila Arsy</a>
-      </div>
-    </div>
-  </div>
-</footer>
-</div>
-</div>
-<!-- Argon Scripts -->
-<!-- Core -->
-<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/js-cookie/js.cookie.js"></script>
-<script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-<script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-<!-- Optional JS -->
-<script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
-<script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
-<!-- Argon JS -->
-<script src="assets/js/argon.js?v=1.2.0"></script>
-</body>
 
-</html>
+<div class="content-wrapper">
+  <!-- Card stats -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <!-- Card -->
+      <div class="col-xl-3 col-md-6">
+        <div class="card card-stats">
+          <!-- Card body -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Mahasiswa</h5>
+                <span class="h2 font-weight-bold mb-0"><?= $hitung_mahasiswa; ?></span>
+              </div>
+              <div class="col-auto">
+                <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                  <i class="ni ni-active-40"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+
+      <!-- Card -->
+      <div class="col-xl-3 col-md-6">
+        <div class="card card-stats">
+          <!-- Card body -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Tugas</h5>
+                <span class="h2 font-weight-bold mb-0"><?= $hitung_tugas; ?></span>
+              </div>
+              <div class="col-auto">
+                <div class="icon icon-shape bg-gradient-yellow text-white rounded-circle shadow">
+                  <i class="ni ni-active-40"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+      <!-- End Row -->
+    </div>
+    <!-- Footer
+    <footer class="footer pt-0">
+      <div class="row align-items-center justify-content-lg-between">
+        <div class="col-lg-6">
+          <div class="copyright text-center  text-lg-left  text-muted">
+            &copy; 2021 <a href="#" class="font-weight-bold ml-1">Fadillah Ahmad Ashshidiq & Tasya Nabila Arsy</a>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+  </div>
+  <?php include_once 'footer.php' ?>
+</div>
