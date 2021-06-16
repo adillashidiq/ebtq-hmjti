@@ -50,7 +50,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="mahasiswa.php">
                 <i class="ni ni-planet text-orange"></i>
                 <span class="nav-link-text">Mahasiswa</span>
               </a>
