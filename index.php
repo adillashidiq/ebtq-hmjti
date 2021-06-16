@@ -22,8 +22,8 @@ $title = 'Home | E-BTQ HMJ TI';
 include_once 'sidenav.php';
 ?>
 
-chart-pie-35
-money-coins
+<!-- money-coins -->
+<!-- active-40 -->
 <!-- Header -->
 <div class="header bg-primary pb-6">
   <div class="container-fluid">
@@ -60,7 +60,7 @@ money-coins
               </div>
               <div class="col-auto">
                 <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                  <i class="ni ni-active-40"></i>
+                  <i class="ni ni-chart-pie-35"></i>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@ money-coins
               </div>
               <div class="col-auto">
                 <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                  <i class="ni ni-active-40"></i>
+                  <i class="ni ni-chart-pie-35"></i>
                 </div>
               </div>
             </div>
