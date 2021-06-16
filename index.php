@@ -9,6 +9,11 @@ $result = mysqli_query($conn, $query);
 $hitung_mahasiswa = mysqli_num_rows($result);
 
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
+$query = "select*from users  where level = 'admin'";
+$result = mysqli_query($conn, $query);
+$hitung_admin = mysqli_num_rows($result);
+
+$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
 $query = "select*from tugas";
 $result = mysqli_query($conn, $query);
 $hitung_tugas = mysqli_num_rows($result);
@@ -43,6 +48,27 @@ money-coins
   <!-- Card stats -->
   <div class="container-fluid mt--6">
     <div class="row">
+      <!-- Card -->
+      <div class="col-xl-3 col-md-6">
+        <div class="card card-stats">
+          <!-- Card body -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Admin</h5>
+                <span class="h2 font-weight-bold mb-0"><?= $hitung_admin; ?></span>
+              </div>
+              <div class="col-auto">
+                <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                  <i class="ni ni-active-40"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+
       <!-- Card -->
       <div class="col-xl-3 col-md-6">
         <div class="card card-stats">
