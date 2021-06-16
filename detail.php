@@ -60,12 +60,7 @@ $data = mysqli_fetch_assoc($result);
               <a href="" class="btn btn-outline-warning btn-sm">edit</a>
               <a href="act.php?del&id=<?= $data['id'] ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut?')">Delete</a>
               <a href="#" class="btn btn-outline-primary btn-sm">validasi</a>
-              <a href="#" class="btn btn-outline-dark btn-sm">kelengkapan</a>
               <a href="#" class="btn btn-outline-success btn-sm">ambil tugas</a>
-            </div>
-
-            <div class="card-footer text-muted text-sm">
-              Dibuat pada <br> <?= $data['created_at']; ?>
             </div>
           </div>
         </div>
