@@ -31,6 +31,15 @@ if (isset($_GET['pesan_hapus'])) {
     $gagal_hapus = true;
   }
 }
+
+// Pesan Edit
+if (isset($_GET['pesan_edit'])) {
+  if ($_GET['pesan_edit'] == "berhasil") {
+    $berhasil_edit = true;
+  } else if ($_GET['pesan_edit'] == "gagal") {
+    $gagal_edit = true;
+  }
+}
 ?>
 
 <!-- Header -->
@@ -123,6 +132,7 @@ if (isset($_GET['pesan_hapus'])) {
                   <td><?= $data['username'] ?></td>
                   <td><?= $data['nim'] ?></td>
                   <td>
+                    <a href="edit-mhs.php" class="btn btn-outline-warning btn-sm">Edit</a>
                     <a href="act-mahasiswa.php?del&id=<?= $data['id'] ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut?')">Delete</a>
                   </td>
                 </tr>

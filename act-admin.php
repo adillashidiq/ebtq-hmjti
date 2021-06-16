@@ -24,4 +24,15 @@ if (isset($_POST['submit-admin'])) {
     } else {
         header("Location: admin.php?pesan_hapus=gagal");
     }
+} else if (isset($_POST['edit-admin'])) {
+    $username = $_POST['username'];
+    $nim = $_POST['nim'];
+    $level = $_POST['level'];
+    $query = "update users set username='$username', nim='$nim' where level='$level'";
+
+    if (mysqli_query($conn, $query) == 'true') {
+        header("Location: admin.php?pesan_edit=berhasil");
+    } else {
+        header("Location: admin.php?pesan_edit=gagal");
+    }
 }

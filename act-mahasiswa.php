@@ -24,4 +24,15 @@ if (isset($_POST['submit-mhs'])) {
     } else {
         header("Location: mahasiswa.php?pesan_hapus=gagal");
     }
+} else if (isset($_POST['edit-mhs'])) {
+    $username = $_POST['username'];
+    $nim = $_POST['nim'];
+    $level = $_POST['level'];
+    $query = "update users set username='$username', nim='$nim' where level='$level'";
+
+    if (mysqli_query($conn, $query) == 'true') {
+        header("Location: mahasiswa.php?pesan_edit=berhasil");
+    } else {
+        header("Location: mahasiswa.php?pesan_edit=gagal");
+    }
 }
