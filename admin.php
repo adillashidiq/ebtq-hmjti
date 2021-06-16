@@ -7,7 +7,7 @@ $title = 'Admin | E-BTQ HMJ TI';
 include_once 'sidenav.php';
 
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-$query = "select*from users";
+$query = "select*from users  where level = 'admin'";
 $result = mysqli_query($conn, $query);
 
 if (!$result) {
