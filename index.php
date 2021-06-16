@@ -17,6 +17,8 @@ $title = 'Home | E-BTQ HMJ TI';
 include_once 'sidenav.php';
 ?>
 
+chart-pie-35
+money-coins
 <!-- Header -->
 <div class="header bg-primary pb-6">
   <div class="container-fluid">
@@ -31,10 +33,6 @@ include_once 'sidenav.php';
               <li class="breadcrumb-item active" aria-current="page">Home</li>
             </ol>
           </nav>
-        </div>
-        <div class="col-lg-6 col-5 text-right">
-          <a href="#" class="btn btn-sm btn-neutral">New</a>
-          <a href="#" class="btn btn-sm btn-neutral">Filters</a>
         </div>
       </div>
     </div>
@@ -73,12 +71,12 @@ include_once 'sidenav.php';
           <div class="card-body">
             <div class="row">
               <div class="col">
-                <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Tugas</h5>
+                <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Seluruh Tugas</h5>
                 <span class="h2 font-weight-bold mb-0"><?= $hitung_tugas; ?></span>
               </div>
               <div class="col-auto">
                 <div class="icon icon-shape bg-gradient-yellow text-white rounded-circle shadow">
-                  <i class="ni ni-active-40"></i>
+                  <i class="ni ni-chart-bar-32"></i>
                 </div>
               </div>
             </div>
