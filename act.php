@@ -9,6 +9,7 @@ $query = "SELECT * from users where nim ='$nim' && password='$password'";
 $login = mysqli_query($conn, $query);
 $isLogin = mysqli_num_rows($login);
 
+// Cek Login
 if ($isLogin > 0) {
   $data = mysqli_fetch_assoc($login);
 
@@ -27,18 +28,18 @@ if ($isLogin > 0) {
   header("location:login.php?msg=$message");
 }
 
+// Aksi Ganti Password
 if (isset($_POST['changepwd'])) {
   $password = $_POST['password'];
 
-  $query = "update user set password='$password'";
+  $query = "update users set password='$password'";
   if (mysqli_query($conn, $query) == 'true') {
-    $message = "<p class= 'alert alert-success'> Password berhasil diganti !</p>";
+    $message = "<p class= 'alert alert-success'> Password berhasil diganti</p>";
     header("Location: login.php?msg=$message");
   }
 }
 
-$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-
+// Aksi Tugas
 if (isset($_POST['submit-tugas'])) {
   $nama_surah = $_POST['nama_surah'];
   $tugas = $_POST['tugas'];
