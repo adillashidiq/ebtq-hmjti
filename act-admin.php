@@ -7,8 +7,9 @@ if (isset($_POST['submit-admin'])) {
     $username = $_POST['username'];
     $nim = $_POST['nim'];
     $password = $_POST['password'];
+    $level = $_POST['level'];
 
-    $query = "insert into users (username, nim, password) values ('$username', '$nim', '$password')";
+    $query = "insert into users (username, nim, password, level) values ('$username', '$nim', '$password', '$level')";
 
     if (mysqli_query($conn, $query) == 'true') {
         $message = "<p class='alert alert-success'> Berhasil menambahkan admin </p>";
