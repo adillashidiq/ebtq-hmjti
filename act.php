@@ -21,7 +21,7 @@ if ($isLogin > 0) {
   } else if ($data['level'] == "mahasiswa") {
     $_SESSION['nim'] = $nim;
     $_SESSION['level'] = "mahasiswa";
-    header("location:admin.php");
+    header("location:mahasiswa");
   }
 } else {
   $message = "<p class= 'alert alert-danger'> Login gagal : (NIM / Password) salah </p";
