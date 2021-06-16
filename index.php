@@ -42,11 +42,8 @@ include_once 'sidenav.php';
       </div>
     </div>
   </div>
-</div>
-
-<div class="content-wrapper">
   <!-- Card stats -->
-  <div class="container-fluid mt--6">
+  <div class="container-fluid">
     <div class="row">
       <!-- Card -->
       <div class="col-xl-3 col-md-6">
@@ -55,11 +52,11 @@ include_once 'sidenav.php';
           <div class="card-body">
             <div class="row">
               <div class="col">
-                <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Admin</h5>
+                <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Data Admin</h5>
                 <span class="h2 font-weight-bold mb-0"><?= $hitung_admin; ?></span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
                   <i class="ni ni-chart-pie-35"></i>
                 </div>
               </div>
@@ -76,7 +73,7 @@ include_once 'sidenav.php';
           <div class="card-body">
             <div class="row">
               <div class="col">
-                <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Mahasiswa</h5>
+                <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Data Mahasiswa</h5>
                 <span class="h2 font-weight-bold mb-0"><?= $hitung_mahasiswa; ?></span>
               </div>
               <div class="col-auto">
@@ -101,7 +98,7 @@ include_once 'sidenav.php';
                 <span class="h2 font-weight-bold mb-0"><?= $hitung_tugas; ?></span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-gradient-yellow text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
                   <i class="ni ni-chart-bar-32"></i>
                 </div>
               </div>
@@ -112,7 +109,9 @@ include_once 'sidenav.php';
       <!-- End Card -->
       <!-- End Row -->
     </div>
-    <!-- Footer
+  </div>
+
+  <!-- Footer
     <footer class="footer pt-0">
       <div class="row align-items-center justify-content-lg-between">
         <div class="col-lg-6">
@@ -122,6 +121,5 @@ include_once 'sidenav.php';
         </div>
       </div>
     </footer> -->
-  </div>
-  <?php include_once 'footer.php' ?>
 </div>
+<?php include_once 'footer.php' ?>
