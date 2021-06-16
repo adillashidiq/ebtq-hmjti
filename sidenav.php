@@ -40,7 +40,7 @@
             <li class="nav-item">
               <a class="nav-link" href="index.php">
                 <i class="ni ni-tv-2 text-primary"></i>
-                <span class="nav-link-text">Dashboard</span>
+                <span class="nav-link-text">Home</span>
               </a>
             </li>
             <li class="nav-item">
@@ -81,20 +81,6 @@
     <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Search form -->
-          <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
-            <div class="form-group mb-0">
-              <div class="input-group input-group-alternative input-group-merge">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-search"></i></span>
-                </div>
-                <input class="form-control" placeholder="Search" type="text">
-              </div>
-            </div>
-            <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </form>
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center  ml-md-auto ">
             <li class="nav-item d-xl-none">
@@ -119,7 +105,7 @@
                 <div class="media align-items-center">
                   <i class="ni ni-bullet-list-67 text-default"></i>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Menu <?= $_SESSION['level']; ?></span>
+                    <span class="mb-0 text-sm  font-weight-bold">Menu <?= $menu['username']; ?></span>
                   </div>
                 </div>
               </a>

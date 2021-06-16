@@ -3,10 +3,16 @@ session_start();
 if ($_SESSION['level'] == "") {
   header("Location: login.php");
 }
+
+$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
+
+$query = "select * from users";
+$result = mysqli_query($conn, $query);
+$menu = mysqli_fetch_assoc($result);
+
 $title = 'Tugas | E-BTQ HMJ TI';
 include_once 'sidenav.php';
 
-$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
 $query = "select*from tugas";
 $result = mysqli_query($conn, $query);
 

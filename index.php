@@ -3,6 +3,7 @@ session_start();
 if ($_SESSION['level'] == "") {
   header("Location: login.php");
 }
+
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
 $query = "select*from users  where level = 'mahasiswa'";
 $result = mysqli_query($conn, $query);
@@ -17,6 +18,10 @@ $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
 $query = "select*from tugas";
 $result = mysqli_query($conn, $query);
 $hitung_tugas = mysqli_num_rows($result);
+
+$query = "select * from users";
+$result = mysqli_query($conn, $query);
+$menu = mysqli_fetch_assoc($result);
 
 $title = 'Home | E-BTQ HMJ TI';
 include_once 'sidenav.php';
