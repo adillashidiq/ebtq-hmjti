@@ -41,11 +41,11 @@ session_start();
           ?>
         </div>
       </div>
-      <!-- Footer -->
-      <footer class="main-footer">
-        <strong> Copyright &copy; 2021 Fadillah Ahmad Ashshidiq & Tasya Nabila Arsy</strong>
-      </footer>
     </div>
+    <!-- Footer -->
+    <footer class="main-footer">
+      <p style="color: white;"><strong> Copyright &copy; 2021 Fadillah Ahmad Ashshidiq & Tasya Nabila Arsy</strong></p>
+    </footer>
     <!-- end containers-->
   </div>
 
