@@ -47,7 +47,7 @@ include_once 'sidenav.php';
 					<!-- Light table -->
 					<tr>
 						<div class="card-body">
-							<form action="act.php" method="post">
+							<form action="act-admin.php" method="post">
 								<div class="row mb-3">
 									<label for="username" class="col-sm-2 col-form-label">Username</label>
 									<div class="col-sm-10">
@@ -66,6 +66,17 @@ include_once 'sidenav.php';
 										<input type="password" class="form-control" id="password" name="password" required="required">
 									</div>
 								</div>
+								<!-- Radio -->
+								<fieldset class="row mb-3">
+									<legend class="col-form-label col-sm-2 pt-0">Level</legend>
+									<div class="col-sm-10">
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="level" id="level" value="admin" checked>
+											<label class="form-check-label" for="level">
+												Admin
+											</label>
+										</div>
+								</fieldset>
 								<button type="submit" class="btn btn-primary" name="submit-admin">Tambah Admin</button>
 							</form>
 					</tr>
