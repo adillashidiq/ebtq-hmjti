@@ -5,15 +5,15 @@ if ($_SESSION['level'] == "") {
 }
 
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-$query = "select * from users";
+$query = "select * from users where level='admin'";
 $result = mysqli_query($conn, $query);
 $menu = mysqli_fetch_assoc($result);
 
 $title = 'Edit Admin | E-BTQ HMJ TI';
 include_once 'sidenav.php';
 
-$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-$query = "select*from users  where level = 'admin'";
+$id = $_GET['id'];
+$query = "select*from users  where id = '$id'";
 $result = mysqli_query($conn, $query);
 $data = mysqli_fetch_assoc($result);
 

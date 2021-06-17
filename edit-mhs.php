@@ -5,7 +5,7 @@ if ($_SESSION['level'] == "") {
 }
 
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-$query = "select * from users";
+$query = "select * from users where level='admin'";
 $result = mysqli_query($conn, $query);
 $menu = mysqli_fetch_assoc($result);
 

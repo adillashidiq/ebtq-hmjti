@@ -5,7 +5,7 @@ if ($_SESSION['level'] == "") {
 }
 
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-$query = "select * from users";
+$query = "select * from users where level= 'admin'";
 $result = mysqli_query($conn, $query);
 $menu = mysqli_fetch_assoc($result);
 
@@ -15,13 +15,6 @@ include_once 'sidenav.php';
 
 <!-- Main content -->
 <div class="main-content" id="panel">
-	<!-- Topnav -->
-	<nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
-		<div class="container-fluid">
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<!-- Search form -->
-	</nav>
-	<!-- Header -->
 	<!-- Header -->
 	<div class="header bg-primary pb-6">
 		<div class="container-fluid">

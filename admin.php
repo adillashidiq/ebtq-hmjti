@@ -5,16 +5,12 @@ if ($_SESSION['level'] == "") {
 }
 
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-$query = "select * from users";
+$query = "select * from users where level='admin'";
 $result = mysqli_query($conn, $query);
 $menu = mysqli_fetch_assoc($result);
 
 $title = 'Admin | E-BTQ HMJ TI';
 include_once 'sidenav.php';
-
-$conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-$query = "select*from users  where level = 'admin'";
-$result = mysqli_query($conn, $query);
 
 if (!$result) {
   echo mysqli_error($conn);
@@ -136,7 +132,8 @@ if (isset($_GET['pesan_edit'])) {
                   <td><?= $data['username'] ?></td>
                   <td><?= $data['nim'] ?></td>
                   <td>
-                    <a href="edit-admin.php" class="btn btn-outline-warning btn-sm">Edit</a>
+                    <a href="edit-admin.php?id=<?= $data['id'] ?>" class="btn btn-outline-warning btn-sm">Edit</a>
+                    <a href="profil.php?id=<?= $data['id'] ?>" class="btn btn-outline-primary btn-sm">Detail</a>
                     <a href="act-admin.php?del&id=<?= $data['id'] ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut?')">Delete</a>
                   </td>
                 </tr>

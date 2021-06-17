@@ -44,21 +44,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="admin.php">
-                <i class="ni ni-circle-08 text-pink"></i>
-                <span class="nav-link-text">Admin</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="mahasiswa.php">
-                <i class="ni ni-planet text-orange"></i>
-                <span class="nav-link-text">Mahasiswa</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="inputtugas.php">
                 <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Input Tugas</span>
+                <span class="nav-link-text">Tugas</span>
               </a>
             </li>
             <li class="nav-item">

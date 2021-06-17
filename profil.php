@@ -5,9 +5,10 @@ if ($_SESSION['level'] == "") {
 }
 
 $conn = mysqli_connect("localhost", "root", "", "db_ebtq");
-$query = "select * from users";
+$query = "select * from users where level = 'admin'";
 $result = mysqli_query($conn, $query);
 $menu = mysqli_fetch_assoc($result);
+$data = mysqli_fetch_assoc($result);
 
 $title = 'Profil | E-BTQ HMJ TI';
 include_once 'sidenav.php';
@@ -52,7 +53,7 @@ include_once 'sidenav.php';
                     <div class="col-lg-4">
                       <div class="form-group">
                         <label class="form-control-label" for="input-nim">NIM</label>
-                        <input type="text" id="input-nim" class="form-control" required="required" placeholder="Masukkan NIM">
+                        <input type="text" id="input-nim" class="form-control" readonly value="<?= $data['nim']; ?>">
                       </div>
                     </div>
                     <div class="col-lg-4">
@@ -81,14 +82,14 @@ include_once 'sidenav.php';
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">Email</label>
-                        <input type="email" id="input-email" class="form-control" placeholder="Alamat Email">
+                        <label class="form-control-label" for="input-ttl">Tempat Tanggal Lahir</label>
+                        <input type="text" id="input-ttl" class="form-control" required="required" placeholder="Contoh : Bekasi, 14 February 1904">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-ttl">Tempat Tanggal Lahir</label>
-                        <input type="text" id="input-ttl" class="form-control" required="required" placeholder="Contoh : Bekasi, 14 February 1904">
+                        <label class="form-control-label" for="input-email">Email</label>
+                        <input type="email" id="input-email" class="form-control" placeholder="Alamat Email">
                       </div>
                     </div>
                     <div class="col-lg-6">
